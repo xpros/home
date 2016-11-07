@@ -10,23 +10,23 @@ fi
 export WORKON_HOME=$HOME/code/.virtualenvs
 export PIP_REQUIRE_VIRTUALENV=true
 export PROJECT_HOME=$HOME/code
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 mkdir -p $WORKON_HOME
-source /usr/bin/virtualenvwrapper.sh 
+source /usr/local/bin/virtualenvwrapper.sh 
 
 gpip () {
 	PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-set_brightness () {
-	if [ -z "$1" ]; then
-		BRIGHTNESS=0;
-	else
-		BRIGHTNESS=$1;
-	fi
-	/usr/bin/sudo /bin/bash -c "echo $BRIGHTNESS > /sys/class/backlight/intel_backlight/brightness"
-} 
+#set_brightness () {
+#	if [ -z "$1" ]; then
+#		BRIGHTNESS=0;
+#	else
+#		BRIGHTNESS=$1;
+#	fi
+#	/usr/bin/sudo /bin/bash -c "echo $BRIGHTNESS > /sys/class/backlight/intel_backlight/brightness"
+#} 
 
 # User specific aliases and functions

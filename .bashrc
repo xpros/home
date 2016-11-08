@@ -30,3 +30,4 @@ gpip () {
 #} 
 
 # User specific aliases and functions
+alias ll='ls -l'

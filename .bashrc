@@ -10,7 +10,7 @@ export PATH=/usr/local/bin:$PATH
 #export ARCHFLAGS="-arch x86_64"
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
- export SYSTEMD_PAGER=
+# export SYSTEMD_PAGER=
 export WORKON_HOME=$HOME/code/.virtualenvs
 export PIP_REQUIRE_VIRTUALENV=true
 export PROJECT_HOME=$HOME/code

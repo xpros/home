@@ -4,3 +4,4 @@
 # But not these files...
 !*.bashrc
 !*.gitignore
+!*.bash_profile

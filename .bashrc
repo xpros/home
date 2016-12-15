@@ -11,6 +11,8 @@ export PATH=/usr/local/bin:$PATH
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
+
+# Python Development Environment
 export WORKON_HOME=$HOME/code/.virtualenvs
 export PIP_REQUIRE_VIRTUALENV=true
 export PROJECT_HOME=$HOME/code
@@ -23,6 +25,16 @@ source /usr/local/bin/virtualenvwrapper.sh
 gpip () {
 	PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
+
+# Java Development Environment
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_7_HOME=$(/usr/libexec/java_home -v1.7)
+
+alias java7="export JAVA_HOME=$JAVA_7_HOME"
+alias java8="export JAVA_HOME=$JAVA_8_HOME"
+
+# default java version
+export JAVA_HOME=$JAVA_8_HOME
 
 #set_brightness () {
 #	if [ -z "$1" ]; then

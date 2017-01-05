@@ -13,9 +13,9 @@ export PATH=/usr/local/bin:$PATH
 # export SYSTEMD_PAGER=
 
 # Python Development Environment
-export WORKON_HOME=$HOME/code/.virtualenvs
+export WORKON_HOME=$HOME/code/python/.virtualenvs
 export PIP_REQUIRE_VIRTUALENV=true
-export PROJECT_HOME=$HOME/code
+export PROJECT_HOME=$HOME/code/python
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'

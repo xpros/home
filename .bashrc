@@ -118,5 +118,6 @@ if ! shopt -oq posix; then
 fi
 
 # git config
+#ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts # setup known_hosts w/github rsa
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 git config --global user.name "$GIT_AUTHOR_NAME"

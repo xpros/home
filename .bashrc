@@ -121,3 +121,4 @@ fi
 #ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts # setup known_hosts w/github rsa
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 git config --global user.name "$GIT_AUTHOR_NAME"
+git config --global push.default simple

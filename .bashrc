@@ -116,6 +116,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+[ -r /home/mhassel/.byobu/prompt ] && . /home/mhassel/.byobu/prompt   #byobu-prompt#
 
 # git config
 #ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts # setup known_hosts w/github rsa

@@ -117,17 +117,11 @@ gpip () {
 	PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-
-# java development environment
-export JAVA_8_HOME=$JAVA_8_HOME
-export JAVA_7_HOME=$JAVA_7_HOME
-
 alias java7="export JAVA_HOME=$JAVA_7_HOME"
 alias java8="export JAVA_HOME=$JAVA_8_HOME"
 
 # default java version
 export JAVA_HOME=$JAVA_8_HOME
-
 
 # git config
 #ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts # setup known_hosts w/github rsa

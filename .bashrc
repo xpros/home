@@ -97,7 +97,13 @@ if ! shopt -oq posix; then
 fi
 [ -r /home/mhassel/.byobu/prompt ] && . /home/mhassel/.byobu/prompt   #byobu-prompt#
 
-# Python Development Environment
+# set path
+export PATH=/usr/local/bin:$PATH
+
+# set architecture flags
+#export ARCHFLAGS="-arch x86_64"
+
+# python development environment
 export WORKON_HOME=$HOME/code/python/.virtualenvs
 export PIP_REQUIRE_VIRTUALENV=true
 export PROJECT_HOME=$HOME/code/python
@@ -107,13 +113,12 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 mkdir -p $WORKON_HOME
 source /usr/local/bin/virtualenvwrapper.sh
 
-
 gpip () {
 	PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
 
-# Java Development Environment
+# java development environment
 export JAVA_8_HOME=$JAVA_8_HOME
 export JAVA_7_HOME=$JAVA_7_HOME
 

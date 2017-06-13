@@ -117,8 +117,8 @@ gpip () {
 	PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-alias java7="export JAVA_HOME=$JAVA_7_HOME"
-alias java8="export JAVA_HOME=$JAVA_8_HOME"
+alias java7="export JAVA_HOME=\"$JAVA_7_HOME\""
+alias java8="export JAVA_HOME=\"$JAVA_8_HOME\""
 
 # default java version
 export JAVA_HOME=$JAVA_8_HOME

@@ -111,7 +111,7 @@ export VIRTUALENVWRAPPER_PYTHON=$VIRTUALENVWRAPPER_PYTHON
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 mkdir -p $WORKON_HOME
-source /usr/local/bin/virtualenvwrapper.sh
+source $VIRTUALENVWRAPPER_SHELL
 
 gpip () {
 	PIP_REQUIRE_VIRTUALENV="" pip "$@"

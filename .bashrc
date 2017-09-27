@@ -129,3 +129,4 @@ export JAVA_HOME=$JAVA_8_HOME
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 git config --global user.name "$GIT_AUTHOR_NAME"
 git config --global push.default simple
+git config --global core.editor vim

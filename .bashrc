@@ -99,6 +99,7 @@ fi
 
 # set path
 export PATH=/usr/local/bin:$PATH
+source ~/.env_paths
 
 # set architecture flags
 #export ARCHFLAGS="-arch x86_64"

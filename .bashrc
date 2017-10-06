@@ -105,12 +105,12 @@ source ~/.env_paths
 ssh-add -l &>/dev/null
 if [ "$?" == 2 ]; then
   test -r ~/.ssh-agent && \
-    eval "$(<~/.ssh-agent)" >/dev/null
+    eval "$(<~/.ssh-agent -t 3600)" >/dev/null
 
   ssh-add -l &>/dev/null
   if [ "$?" == 2 ]; then
     (umask 066; ssh-agent > ~/.ssh-agent)
-    eval "$(<~/.ssh-agent)" >/dev/null
+    eval "$(<~/.ssh-agent -t 3600)" >/dev/null
     ssh-add
   fi
 fi

@@ -103,15 +103,15 @@ source ~/.env_paths
 
 # prevent a massive spawn of ssh-agent agents
 ssh-add -l &>/dev/null
-if [ "$?" == 2 ]; then
+if [ "$?" -ne 0 ]; then
   test -r ~/.ssh-agent && \
-    eval "$(<~/.ssh-agent -t 3600)" >/dev/null
+    eval "$(<~/.ssh-agent)" >/dev/null
 
   ssh-add -l &>/dev/null
-  if [ "$?" == 2 ]; then
+  if [ "$?" -ne 0 ]; then
     (umask 066; ssh-agent > ~/.ssh-agent)
-    eval "$(<~/.ssh-agent -t 3600)" >/dev/null
-    ssh-add
+    eval "$(<~/.ssh-agent)" >/dev/null
+    find ~/.ssh -type f -name id_rsa* -not -name *.pub -exec ssh-add {} \;
   fi
 fi
 

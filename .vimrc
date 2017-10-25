@@ -8,8 +8,19 @@ syntax on
 set hlsearch
 " enable syntax highlighting on
 syntax on
+set colorcolumn=80
+" always show status
+set laststatus=2
+" set titlebar
+set title
+" set tabs
+set autoindent
 set smartindent
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
-set colorcolumn=80
+set smarttab
+set cindent
+set showmatch
+set matchtime=1

@@ -1,8 +1,13 @@
 # Ignore everything 
 *
-
 # But not these files...
-!*.bashrc
-!*.gitignore
-!*.bash_profile
-!*.bash_aliases
+!.bash_aliases
+!.bash_profile
+!.bashrc
+!.bashrc.ubuntu
+!.bashrc.ubuntu.override
+!.env_path.examples
+!.env_vars.example
+!.gitignore
+!.vimrc
+!README.md

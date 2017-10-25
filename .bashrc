@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
+# set editor
+export EDITOR=${EDITOR}
+
 if [[ -f ${HOME}/.bashrc.ubuntu ]]; then
     source ${HOME}/.bashrc.ubuntu
+fi
+
+if [[ -f ${HOME}/.bashrc.ubuntu.override ]]; then
+    source ${HOME}/.bashrc.ubuntu.override
 fi
 
 if [[ -f ${HOME}/.bash_aliases ]]; then

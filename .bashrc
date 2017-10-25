@@ -26,15 +26,15 @@ fi
 # prevent a massive spawn of ssh-agent agents
 ssh-add -l &>/dev/null
 if [ "$?" -ne 0 ]; then
-  test -r ~/.ssh-agent && \
+    test -r ~/.ssh-agent && \
     eval "$(<~/.ssh-agent)" >/dev/null
-
-  ssh-add -l &>/dev/null
-  if [ "$?" -ne 0 ]; then
-    (umask 066; ssh-agent > ~/.ssh-agent)
-    eval "$(<~/.ssh-agent)" >/dev/null
-    find ~/.ssh -type f -name id_rsa* -not -name *.pub -exec ssh-add {} \;
-  fi
+    
+    ssh-add -l &>/dev/null
+    if [ "$?" -ne 0 ]; then
+        (umask 066; ssh-agent > ~/.ssh-agent)
+        eval "$(<~/.ssh-agent)" >/dev/null
+        find ~/.ssh -type f -name id_rsa* -not -name *.pub -exec ssh-add {} \;
+    fi
 fi
 
 # python development environment

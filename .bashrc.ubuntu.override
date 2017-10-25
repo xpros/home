@@ -1,0 +1,5 @@
+# for setting history date and time format
+HISTTIMEFORMAT="%F %T  "
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=
+HISTFILESIZE=

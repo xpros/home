@@ -44,13 +44,13 @@ set showmode
 " start scrolling three lines before the horizontal window border
 set scrolloff=3
 " set tabs
-set autoindent
-set smartindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set smarttab
-set cindent
-set showmatch
-set matchtime=1
+"set autoindent
+"set smartindent
+"set tabstop=4
+"set softtabstop=4
+"set shiftwidth=4
+"set expandtab
+"set smarttab
+"set cindent
+"set showmatch
+"set matchtime=1

@@ -36,7 +36,11 @@ if [ "$?" -ne 0 ]; then
     fi
 fi
 
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+# set prompt_command
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+
+# set PS1                                                                       
+export PS1='\[\033]0;\u@\h:\w\007\]\[\033[1;32m\]\n[ \w ]\n\[\033[1;39m\]\u@\h \[\033[1;31m\]>> \[\033[m\]'
 
 # python development environment
 export WORKON_HOME=$HOME/code/python/.virtualenvs

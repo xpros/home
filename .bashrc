@@ -36,6 +36,8 @@ if [ "$?" -ne 0 ]; then
     fi
 fi
 
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
 # python development environment
 export WORKON_HOME=$HOME/code/python/.virtualenvs
 export PIP_REQUIRE_VIRTUALENV=true

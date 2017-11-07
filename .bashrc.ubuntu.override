@@ -1,3 +1,5 @@
+# for setting history control
+HISTCONTROL=ignoredups:erasedups
 # for setting history date and time format
 HISTTIMEFORMAT="%F %T  "
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)

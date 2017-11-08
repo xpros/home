@@ -64,15 +64,3 @@ alias java9="export JAVA_HOME=\"$JAVA_9_HOME\""
 
 # default java version
 export JAVA_HOME=$JAVA_8_HOME
-
-# git config
-#ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts # setup known_hosts w/github rsa
-git config --global user.email "$GIT_AUTHOR_EMAIL"
-git config --global user.name "$GIT_AUTHOR_NAME"
-git config --global push.default simple
-git config --global core.editor vim
-git config --global alias.co checkout
-git config --global alias.ci commit
-git config --global alias.st status
-git config --global alias.br branch
-git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"

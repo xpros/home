@@ -64,3 +64,7 @@ alias java9="export JAVA_HOME=\"$JAVA_9_HOME\""
 
 # default java version
 export JAVA_HOME=$JAVA_8_HOME
+
+# export git user
+export GIT_AUTHOR_NAME="\"${GIT_AUTHOR_NAME}\""
+export GIT_AUTHOR_EMAIL="\"${GIT_AUTHOR_EMAIL}\""

@@ -1,5 +1,6 @@
 " set the color theme for vim
-color delek
+" color delek
+color murphy
 " show the filename in the window titlebar
 set title
 " set syntax highlighting

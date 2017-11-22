@@ -44,7 +44,7 @@ export PS1='\[\033]0;\u@\h:\w\007\]\[\033[1;32m\]\n[ \w ]\n\[\033[1;39m\]\u@\h \
 
 # python development environment
 export WORKON_HOME=$HOME/code/python/.virtualenvs
-export PIP_REQUIRE_VIRTUALENV=true
+#export PIP_REQUIRE_VIRTUALENV=true
 export PROJECT_HOME=$HOME/code/python
 export VIRTUALENVWRAPPER_PYTHON=$VIRTUALENVWRAPPER_PYTHON
 export VIRTUALENVWRAPPER_VIRTUALENV=$VIRTUALENVWRAPPER_VIRTUALENV

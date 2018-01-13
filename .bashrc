@@ -70,7 +70,7 @@ export GIT_AUTHOR_NAME="\"${GIT_AUTHOR_NAME}\""
 export GIT_AUTHOR_EMAIL="\"${GIT_AUTHOR_EMAIL}\""
 
 # npm/node config
-[[ ! -d ${NPM_PACKAGES} ]] && mkdir ${NPM_PACKAGES} || export PATH="${NPM_PACKAGES}/bin:${PATH}"
+[[ ! -d ${NPM_PACKAGES} ]] && mkdir -p ${NPM_PACKAGES} || export PATH="${NPM_PACKAGES}/bin:${PATH}"
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config

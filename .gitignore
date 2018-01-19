@@ -6,8 +6,9 @@
 !.bashrc
 !.bashrc.ubuntu
 !.bashrc.ubuntu.override
-!.env_path.examples
+!.env_paths.example
 !.env_vars.example
+!.gitconfig
 !.gitignore
 !.vimrc
 !README.md

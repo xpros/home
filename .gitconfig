@@ -8,3 +8,5 @@
 	ci = commit
 	st = status
 	br = branch
+[user]
+	useConfigOnly = true

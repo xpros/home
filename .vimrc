@@ -33,7 +33,7 @@ set incsearch
 " always show status
 set laststatus=2
 " set column width reminder
-set colorcolumn=80
+set colorcolumn=120
 " disable error bells
 set noerrorbells
 " show the cursor position
@@ -55,3 +55,11 @@ set scrolloff=3
 "set cindent
 "set showmatch
 "set matchtime=1
+
+"whiltespaces are bad
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()

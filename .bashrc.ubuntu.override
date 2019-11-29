@@ -1,5 +1,5 @@
 # history settings
-export HISTCONTROL=ignoreboth #:erasedups
+export HISTCONTROL='ignoreboth' #:erasedups
 # for setting history date and time format
 export HISTTIMEFORMAT="%F %T  "
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)

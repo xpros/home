@@ -46,16 +46,6 @@ export PATH="${JAVA_HOME}/bin:${PATH}"
 export GIT_AUTHOR_NAME="\"${GIT_AUTHOR_NAME}\""
 export GIT_AUTHOR_EMAIL="\"${GIT_AUTHOR_EMAIL}\""
 
-# npm/node config
-if [[ -n "${NPM_PACKAGES_DIR}" ]]; then
-    # if NPM_PACKAGES_DIR exists; export the path
-    [[ ! -d "${NPM_PACKAGES_DIR}" ]] && mkdir -p "${NPM_PACKAGES_DIR}" || export PATH="${NPM_PACKAGES_DIR}/bin:${PATH}"
-
-    # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-    unset MANPATH # delete if you already modified MANPATH elsewhere in your config
-    export MANPATH="$NPM_PACKAGES_DIR/share/man:$(manpath)"
-fi
-
 # nvm config
 if [[ -n "${NVM_DIR}" ]]; then
     # if NVM_DIR exists; export NVM_DIR

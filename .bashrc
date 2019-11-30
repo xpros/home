@@ -59,8 +59,15 @@ fi
 # nvm config
 if [[ -n "${NVM_DIR}" ]]; then
     # if NVM_DIR exists; export NVM_DIR
-    [[ ! -d ${NVM_DIR} ]] && mkdir -p "${NVM_DIR}" || export NVM_DIR="${NVM_DIR}"
+    [[ ! -d "${NVM_DIR}" ]] && mkdir -p "${NVM_DIR}" || export NVM_DIR="${NVM_DIR}"
     [[ -s "${NVM_DIR}/nvm.sh" ]] && \. "${NVM_DIR}/nvm.sh"  # This lOads nvm
     [[ -s "${NVM_DIR}/bash_completion" ]] && \. "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
+fi
+
+# rvm config
+if [[ -n "${RVM_DIR}" ]]; then
+    # if RVM_DIR exists; export RVM_DIR
+    [[ -s "${RVM_DIR}" ]] && mkdir -p "${RVM_DIR}" || export PATH="${RVM_DIR}/bin:${PATH}"
+    [[ -s "${RVM_DIR}/scripts/rvm" ]] && \. "${RVM_DIR}/scripts/rvm"
 fi
 

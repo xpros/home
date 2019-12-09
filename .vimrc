@@ -34,6 +34,13 @@ set incsearch
 set laststatus=2
 " set column width reminder
 set colorcolumn=120
+" highlight current line
+"set cursorline
+" highlight current column
+"set cursorcolumn
+highlight CursorLine   cterm=NONE ctermbg=darkgray ctermfg=NONE "guibg=lightgrey guifg=white
+highlight CursorColumn cterm=NONE ctermbg=darkgray ctermfg=NONE "guibg=lightgrey guifg=white
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 " disable error bells
 set noerrorbells
 " show the cursor position

@@ -51,6 +51,7 @@ set shortmess=atI
 set showmode
 " start scrolling three lines before the horizontal window border
 set scrolloff=3
+set backspace=indent,eol,start " more powerful backspacing
 " set tabs
 "set autoindent
 "set smartindent

@@ -61,3 +61,9 @@ if [[ -n "${RVM_DIR}" ]]; then
     [[ -s "${RVM_DIR}/scripts/rvm" ]] && \. "${RVM_DIR}/scripts/rvm"
 fi
 
+# ansible config
+if [[ -n "${ANSIBLE_DIR}" ]]; then
+    # if ANSIBLE_DIR exists; export ANSIBLE_DIR
+    [[ -s "${ANSIBLE_DIR}" ]] && mkdir -p "${ANSIBLE_DIR}" || export "${ANSIBLE_DIR}"
+fi
+

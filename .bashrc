@@ -30,7 +30,7 @@ fi
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # set PS1
-export PS1='\[\033]0;\u@\h:\w\007\]\[\033[1;32m\]\n[ \w ]\n\[\033[1;39m\]\u@\h \[\033[1;31m\]$ \[\033[m\]'
+export PS1='\[\033]0;\u@\h:\w\a\]\[\033[1;32m\]\n[ \w ]\n\[\033[1;7;35m\]\u\[\033[0m\]@\[\033[1;7;35m\]\h\[\033[0m\] \D{%F %T} \[\033[0;31m\]\$ \[\033[0m\]'
 
 # (conda) python development environment
 [[ -f "${HOME}/conda/etc/profile.d/conda.sh" ]] && \. "${HOME}/conda/etc/profile.d/conda.sh"

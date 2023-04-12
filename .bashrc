@@ -2,10 +2,6 @@
 # set editor
 export EDITOR="${EDITOR}"
 
-[[ -f "${HOME}/.bashrc.ubuntu" ]] && \. "${HOME}/.bashrc.ubuntu"
-
-[[ -f "${HOME}/.bashrc.ubuntu.override" ]] && \. "${HOME}/.bashrc.ubuntu.override"
-
 [[ -f "${HOME}/.bash_aliases" ]] && \. "${HOME}/.bash_aliases"
 
 [[ -f "${HOME}/.env_vars" ]] && \. "${HOME}/.env_vars"
@@ -30,7 +26,7 @@ fi
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # set PS1
-export PS1='\[\033]0;\u@\h:\w\a\]\[\033[1;32m\]\n[ \w ]\n\[\033[1;7;35m\]\u\[\033[0m\]@\[\033[1;7;35m\]\h\[\033[0m\] \D{%F %T} \[\033[0;31m\]\$ \[\033[0m\]'
+export PS1='\[\033]0;\u@\h:\w\a\]\[\033[1;32m\][ \w ]\n\[\033[1;7;33m\]\u\[\033[0m\]@\[\033[1;7;33m\]\h\[\033[0m\] \D{%F %T} \[\033[0;31m\]\$ \[\033[0m\]'
 
 # (conda) python development environment
 [[ -f "${HOME}/conda/etc/profile.d/conda.sh" ]] && \. "${HOME}/conda/etc/profile.d/conda.sh"
@@ -58,7 +54,7 @@ fi
 if [[ -n "${RVM_DIR}" ]]; then
     # if RVM_DIR exists; export RVM_DIR
     [[ -s "${RVM_DIR}" ]] && mkdir -p "${RVM_DIR}" || export PATH="${RVM_DIR}/bin:${PATH}"
-    [[ -s "${RVM_DIR}/scripts/rvm" ]] && \. "${RVM_DIR}/scripts/rvm"
+    [[ -s "${RVM_DIR}/scripts/rvm" ]] && source "${RVM_DIR}/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
 # ansible config
@@ -67,3 +63,9 @@ if [[ -n "${ANSIBLE_DIR}" ]]; then
     [[ -s "${ANSIBLE_DIR}" ]] && mkdir -p "${ANSIBLE_DIR}" || export "${ANSIBLE_DIR}"
 fi
 
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$${RVM_DIR}/bin"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

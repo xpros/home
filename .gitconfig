@@ -1,12 +1,23 @@
-[push]
-	default = simple
+[alias]
+        amend = commit --amend
+        br = branch -vv -a
+	ci = commit
+	co = checkout
+        going = !git add -A && git patch && git push -f
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+        lga = log --oneline --decorate --all --graph
+        lg = log --oneline --decorate --all --graph -30
+        patch = commit --amend --reuse-message HEAD                                   # does a commit amend but keeps the previous message
+        pu = push --follow-tags
+        remaster = !git co master && git pull && git co - && git rebase master        # updates the master branch and rebases on top of that
+        st = status -uno
+        unstage = reset HEAD --
 [core]
 	editor = vim
-[alias]
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
+[push]
+	default = tracking
 [user]
-	useConfigOnly = true
+        useConfigOnly = true
+        email = email@changeme.com
+        name = ChangeMe
+

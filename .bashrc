@@ -23,7 +23,14 @@ if [ "$?" -ne 0 ]; then
 fi
 
 # set prompt_command
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -w; history -c; history -r"
+
+# set history
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+export HISTCONTROL=erasedups
+export HISTIGNORE="exit"
 
 # set PS1
 export PS1='\[\033]0;\u@\h:\w\a\]\[\033[1;32m\][ \w ]\n\[\033[1;7;33m\]\u\[\033[0m\]@\[\033[1;7;33m\]\h\[\033[0m\] \D{%F %T} \[\033[0;31m\]\$ \[\033[0m\]'
@@ -46,26 +53,26 @@ export GIT_AUTHOR_EMAIL="\"${GIT_AUTHOR_EMAIL}\""
 if [[ -n "${NVM_DIR}" ]]; then
     # if NVM_DIR exists; export NVM_DIR
     [[ ! -d "${NVM_DIR}" ]] && mkdir -p "${NVM_DIR}" || export NVM_DIR="${NVM_DIR}"
-    [[ -s "${NVM_DIR}/nvm.sh" ]] && \. "${NVM_DIR}/nvm.sh"  # This lOads nvm
-    [[ -s "${NVM_DIR}/bash_completion" ]] && \. "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
+    # load nvm
+    [[ -s "${NVM_DIR}/nvm.sh" ]] && \. "${NVM_DIR}/nvm.sh"
+    # load nvm bash_completion
+    [[ -s "${NVM_DIR}/bash_completion" ]] && \. "${NVM_DIR}/bash_completion"
 fi
 
 # rvm config
 if [[ -n "${RVM_DIR}" ]]; then
-    # if RVM_DIR exists; export RVM_DIR
-    [[ -s "${RVM_DIR}" ]] && mkdir -p "${RVM_DIR}" || export PATH="${RVM_DIR}/bin:${PATH}"
-    [[ -s "${RVM_DIR}/scripts/rvm" ]] && source "${RVM_DIR}/scripts/rvm" # Load RVM into a shell session *as a function*
+  # if RVM_DIR exists; export RVM_DIR
+  [[ -s "${RVM_DIR}" ]] && mkdir -p "${RVM_DIR}" || export RVM_DIR="${RVM_DIR}"
+  # Load RVM into a shell session *as a function*
+  [[ -s "${RVM_DIR}/scripts/rvm" ]] && source "${RVM_DIR}/scripts/rvm"
 fi
 
 # ansible config
 if [[ -n "${ANSIBLE_DIR}" ]]; then
-    # if ANSIBLE_DIR exists; export ANSIBLE_DIR
-    [[ -s "${ANSIBLE_DIR}" ]] && mkdir -p "${ANSIBLE_DIR}" || export "${ANSIBLE_DIR}"
+  # if ANSIBLE_DIR exists; export ANSIBLE_DIR
+  [[ -s "${ANSIBLE_DIR}" ]] && mkdir -p "${ANSIBLE_DIR}" || export "${ANSIBLE_DIR}"
 fi
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$${RVM_DIR}/bin"
-
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+

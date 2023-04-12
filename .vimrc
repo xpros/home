@@ -33,7 +33,7 @@ set incsearch
 " always show status
 set laststatus=2
 " set column width reminder
-set colorcolumn=120
+set colorcolumn=80,120
 " highlight current line
 "set cursorline
 " highlight current column
@@ -55,6 +55,7 @@ set backspace=indent,eol,start " more powerful backspacing
 " set tabs
 "set autoindent
 "set smartindent
+"set shiftround
 "set tabstop=4
 "set softtabstop=4
 "set shiftwidth=4
@@ -63,6 +64,12 @@ set backspace=indent,eol,start " more powerful backspacing
 "set cindent
 "set showmatch
 "set matchtime=1
+
+" set the indentation width to 4 spaces for Python files
+autocmd FileType python setlocal shiftwidth=4
+
+" set the indentation width to 2 spaces for all other files
+autocmd FileType * setlocal shiftwidth=2
 
 "whiltespaces are bad
 highlight ExtraWhitespace ctermbg=red guibg=red

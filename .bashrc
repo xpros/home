@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # set editor
-export EDITOR="${EDITOR}"
+EDITOR="${EDITOR}"
 
 [[ -f "${HOME}/.bash_aliases" ]] && \. "${HOME}/.bash_aliases"
 
@@ -22,18 +22,24 @@ if [ "$?" -ne 0 ]; then
     fi
 fi
 
+# set shell options
+shopt -s histappend
+
 # set prompt_command
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -w; history -c; history -r"
+#PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -w; history -c; history -r"
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # set history
-export HISTFILESIZE=
-export HISTSIZE=
-export HISTTIMEFORMAT="[%F %T] "
-export HISTCONTROL=erasedups
-export HISTIGNORE="exit"
+HISTFILESIZE=
+HISTSIZE=
+HISTTIMEFORMAT="[%F %T] "
+#HISTCONTROL=erasedups
+HISTCONTROL=ignoredups:erasedups
+HISTIGNORE="exit"
+
 
 # set PS1
-export PS1='\[\033]0;\u@\h:\w\a\]\[\033[1;32m\][ \w ]\n\[\033[1;7;33m\]\u\[\033[0m\]@\[\033[1;7;33m\]\h\[\033[0m\] \D{%F %T} \[\033[0;31m\]\$ \[\033[0m\]'
+PS1='\[\033]0;\u@\h:\w\a\]\[\033[1;32m\][ \w ]\n\[\033[1;7;33m\]\u\[\033[0m\]@\[\033[1;7;33m\]\h\[\033[0m\] \D{%F %T %Z} \[\033[0;31m\]\$ \[\033[0m\]'
 
 # (conda) python development environment
 [[ -f "${HOME}/conda/etc/profile.d/conda.sh" ]] && \. "${HOME}/conda/etc/profile.d/conda.sh"
